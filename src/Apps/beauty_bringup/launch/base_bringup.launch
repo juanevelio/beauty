@@ -1,0 +1,19 @@
+<launch>
+	<node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen" clear_params="true">
+	<rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+	</node>
+	<node name="turtle1" pkg="turtlesim" type="turtlesim_node" output="screen">	
+	<remap from="beauty_teleop_joystick/cmd_vel" to="turtle1/cmd_vel"/>	
+	</node>
+	<include file="$(find beauty_teleop)/launch/includes/velocity_smoother.launch.xml"/>
+	<node pkg="beauty_teleop" type="beauty_teleop_joy" name="beauty_teleop_joystick">
+		<param name="scale_angular" value="0.3"/>
+		<param name="scale_linear"  value="0.7"/>
+		<param name="axis_deadman"  value="4"/>
+		<param name="axis_linear"   value="1"/>
+		<param name="axis_angular"  value="0"/>
+		<remap from="beauty_teleop_joystick/cmd_vel" to="/cmd_vel"/>
+	</node>
+	<node pkg="joy" type="joy_node" name="joystick"/>
+
+</launch>

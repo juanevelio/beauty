@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/devel
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.12.7
+Cflags: -I/home/beauty/beauty_ws/src/Apps/beauty_navigation/voxel_grid/include
+Libs: -L/home/beauty/beauty_ws/devel/lib -lvoxel_grid
+Requires: roscpp

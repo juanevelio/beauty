@@ -1,0 +1,15 @@
+<launch>
+	<node name="turtle1" pkg="turtlesim" type="turtlesim_node" output="screen" clear_params="true">
+	</node>
+	<include file="$(find beauty_teleop)/launch/includes/velocity_smoother.launch.xml"/>
+	<node pkg="beauty_teleop" type="beauty_teleop_joy" name="beauty_teleop_joystick">		
+		<param name="scale_angular" value="1.5"/>
+		<param name="scale_linear"  value="0.5"/>
+		<param name="axis_deadman"  value="4"/>
+		<param name="axis_linear"   value="1"/>
+		<param name="axis_angular"  value="0"/>
+		<remap from="beauty_teleop_joystick/cmd_vel" to="/turtle1/cmd_vel"/>
+	</node>
+	<node pkg="joy" type="joy_node" name="joystick"/>
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/devel
+
+Name: beauty_set_tf
+Description: Description of beauty_set_tf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/beauty/beauty_ws/devel/lib 
+Requires: 

@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<robot name="beauty">
+	<material name="blue">
+		<color rgba="0 0 .8 1"/>
+	</material>
+	<material name="black">
+		<color rgba="0 0 0 1"/>
+	</material>
+	<material name="white">
+		<color rgba="1 1 1 1"/>
+	</material>
+
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.05" radius="0.3"/>
+			</geometry>
+			<material name="white"/>
+			<origin rpy="0 0 0" xyz="0 0 0.125"/>
+		</visual>
+	</link>
+	<link name="left_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="left_wheel_shift" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="base_link"/>
+		<child link="left_wheel"/>
+		<origin rpy="0 1.57075 0" xyz="-0.24 0 0.05"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="right_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="right_wheel_shift" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="base_link"/>
+		<child link="right_wheel"/>
+		<origin rpy="0 1.57075 0" xyz="0.24 0 0.05"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="front_direction">
+		<visual>
+			<geometry>
+				<box size="0.02 0.02 0.08"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="base_to_front_dirction" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="base_link"/>
+		<child link="front_direction"/>
+		<origin rpy="0 0 0" xyz="0 0.24 0.05"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="front_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="front_wheel_shift" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="front_direction"/>
+		<child link="front_wheel"/>
+		<origin rpy="0 1.57075 0" xyz="0 0 0"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="back_direction">
+		<visual>
+			<geometry>
+				<box size="0.02 0.02 0.08"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="base_to_back_dirction" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="base_link"/>
+		<child link="back_direction"/>
+		<origin rpy="0 0 0" xyz="0 -0.24 0.05"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="back_wheel">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="back_wheel_shift" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="back_direction"/>
+		<child link="back_wheel"/>
+		<origin rpy="0 1.57075 0" xyz="0 0 0"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping="0.0" friction="0.0"/>
+	</joint>
+	<link name="main_body">
+		<visual>
+			<geometry>
+				<cylinder length="0.78" radius="0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="base_to_body" type="fixed">
+		<parent link="base_link"/>
+		<child link="main_body"/>
+		<origin xyz="0 0 0.515"/>
+	</joint>
+	<link name="body_extension">
+		<visual>
+			<geometry>
+				<cylinder length="0.4" radius="0.05"/>
+			</geometry>
+			<origin rpy="0 0 0"/>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="body_to_body_extension" type="prismatic">
+		<axis xyz="0 0 1"/>
+		<parent link="main_body"/>
+		<child link="body_extension"/>
+		<limit effort="1000.0" lower="0.0" upper="0.13" velocity="0.2"/>
+		<origin rpy="0 0 1.57075" xyz="0 0 0.45"/>
+	</joint>
+	<link name="supporting_rod">
+		<visual>
+			<geometry>
+				<box size="0.1 0.28 0.1"/>
+			</geometry>
+			<origin xyz="0 0 0.2" ryp="0 0 0"/>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="body_extension_to_supporting_rod" type="fixed">
+		<parent link="body_extension"/>
+		<child link="supporting_rod"/>
+	</joint>
+	<link name="left_first_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.08" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="supporting_rod_to_left_first_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="supporting_rod"/>
+		<child link="left_first_joint"/>
+		<origin xyz="0 0.14 .2" rpy="1.57075 1.57075 0"/>
+	</joint>
+	<link name="right_first_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.08" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+			<origin xyz="0 0 0"/>
+		</visual>
+	</link>
+	<joint name="supporting_rod_to_right_first_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="supporting_rod"/>
+		<child link="right_first_joint"/>
+		<origin xyz="0 -.14 0.2" rpy="1.57075 1.57075 0"/>
+	</joint>
+	<link name="left_first_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="left_first_joint_to_first_link" type="fixed">
+		<parent link="left_first_joint"/>
+		<child link="left_first_link"/>
+		<origin xyz="0 0 -0.09"/>
+	</joint>
+	<link name="right_first_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="right_first_joint_to_first_link" type="fixed">
+		<parent link="right_first_joint"/>
+		<child link="right_first_link"/>
+		<origin xyz="0 0 0.09"/>
+	</joint>
+	<link name="left_second_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="left_first_link_to_second_jonit" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="left_first_link"/>
+		<child link="left_second_joint"/>
+		<origin xyz="0 0 -0.05" rpy="-1.57075 0 0"/>
+	</joint>
+	<link name="right_second_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="right_first_link_to_second_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="right_first_link"/>
+		<child link="right_second_joint"/>
+		<origin xyz="0 0 0.05" rpy="1.57075 0 0"/>
+	</joint>
+	<link name="left_second_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.2" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="left_second_joint_to_second_link" type="fixed">
+		<parent link="left_second_joint"/>
+		<child link="left_second_link"/>
+		<origin xyz="0 0.12 0" rpy="1.570750 0 0"/>
+	</joint>
+	<link name="right_second_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.2" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="right_second_joint_to_second_link" type="fixed">
+		<parent link="right_second_joint"/>
+		<child link="right_second_link"/>
+		<origin xyz="0 0.12 0" rpy="1.57075 0 0"/>
+	</joint>
+	<link name="left_third_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="left_second_link_to_third_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="left_second_link"/>
+		<child link="left_third_joint"/>
+		<origin xyz="0 0 -0.15" rpy="0 0 0"/>
+	</joint>
+	<link name="right_third_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="right_second_link_to_third_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="right_second_link"/>
+		<child link="right_third_joint"/>
+		<origin xyz="0 0 -0.15" rpy="3.14159 0 0"/>
+	</joint>
+	<link name="left_third_link">
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+	</link>
+	<joint name="left_third_joint_to_third_link" type="fixed">
+		<parent link="left_third_joint"/>
+		<child link="left_third_link"/>
+	</joint>
+	<link name="left_fourth_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="left_third_link_to_fourth_joint" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="left_third_link"/>
+		<child link="left_fourth_joint"/>
+		<origin rpy="0 1.57075 0"/>
+	</joint>
+	<link name="right_third_link">
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="white"/>
+	</link>
+	<joint name="right_third_joint_to_third_link" type="fixed">
+		<parent link="right_third_joint"/>
+		<child link="right_third_link"/>
+	</joint>
+	<link name="right_fourth_joint">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.04"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="right_third_link_to_fourth_joint" type="continuous">
+		<axis xyz="0 0 -1"/>
+		<parent link="right_third_link"/>
+		<child link="right_fourth_joint"/>
+		<origin rpy="0 1.57075 0" />
+	</joint>
+	<link name="head_connector">
+		<visual>
+			<geometry>
+				<box size="0.1 0.1 0.1"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="supporting_rod_to_head_connector" type="fixed">
+		<parent link="supporting_rod"/>
+		<child link="head_connector"/>
+		<origin xyz="0 0 0.25" rpy="0 0 0"/>
+	</joint>
+	<link name="head_pitch">
+		<visual>
+			<geometry>
+				<box size="0.05 0.05 0.05"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="head_connector_to_head_pitch" type="continuous">
+		<axis xyz="0 0 1"/>
+		<parent link="head_connector"/>
+		<child link="head_pitch"/>
+		<origin xyz="0 0 0.075"/>
+	</joint>
+	<link name="head_pitch_connector">
+		<visual>
+			<geometry>
+				<box size="0.03 0.03 0.06"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	<joint name="head_pitch_to_head_pitch_connector" type="fixed">
+		<parent link="head_pitch"/>
+		<child link="head_pitch_connector"/>
+		<origin xyz="0 0 0.025"/>
+	</joint>
+	<link name="head_roll">
+		<visual>
+			<geometry>
+				<box size="0.03 0.03 0.03"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+	<joint name="head_pitch_connectori_to_head_roll" type="continuous">
+		<axis xyz="0 1 0"/>
+		<parent link="head_pitch_connector"/>
+		<child link="head_roll"/>
+		<origin xyz="0 0 0.03"/>
+	</joint>
+</robot>

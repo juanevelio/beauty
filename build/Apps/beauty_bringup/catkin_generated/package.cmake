@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "beauty_bringup")
+set(beauty_bringup_MAINTAINER "beauty <beauty@todo.todo>")
+set(beauty_bringup_DEPRECATED "")
+set(beauty_bringup_VERSION "0.0.0")
+set(beauty_bringup_BUILD_DEPENDS )
+set(beauty_bringup_RUN_DEPENDS )
+set(beauty_bringup_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/install
+
+Name: beauty_2dnav
+Description: Description of beauty_2dnav
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/beauty/beauty_ws/install/lib 
+Requires: 

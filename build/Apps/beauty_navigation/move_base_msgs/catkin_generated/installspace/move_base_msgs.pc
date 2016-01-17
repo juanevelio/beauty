@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/install
+
+Name: move_base_msgs
+Description: Description of move_base_msgs
+Version: 1.12.7
+Cflags: -I/home/beauty/beauty_ws/install/include
+Libs: -L/home/beauty/beauty_ws/install/lib 
+Requires: 

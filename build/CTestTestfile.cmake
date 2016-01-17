@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: /home/beauty/beauty_ws/src
+# Build directory: /home/beauty/beauty_ws/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+SUBDIRS(gtest)
+SUBDIRS(Apps/beauty_bringup)
+SUBDIRS(Apps/beauty_navigation/navigation)
+SUBDIRS(beauty_arduino/ros_arduino_bridge)
+SUBDIRS(beauty_arduino/ros_arduino_firmware)
+SUBDIRS(beauty_arduino/ros_arduino_python)
+SUBDIRS(Apps/beauty_navigation/move_base_msgs)
+SUBDIRS(beauty_arduino/ros_arduino_msgs)
+SUBDIRS(Sensors/rplidar_ros)
+SUBDIRS(Apps/beauty_teleop)
+SUBDIRS(Sensors/razor_imu_9dof)
+SUBDIRS(Apps/beauty_set_tf)
+SUBDIRS(Apps/beauty_navigation/fake_localization)
+SUBDIRS(Apps/beauty_navigation/map_server)
+SUBDIRS(Apps/beauty_navigation/amcl)
+SUBDIRS(Apps/beauty_navigation/robot_pose_ekf)
+SUBDIRS(Apps/beauty_description)
+SUBDIRS(Apps/beauty_navigation/voxel_grid)
+SUBDIRS(Apps/beauty_navigation/costmap_2d)
+SUBDIRS(Apps/beauty_navigation/nav_core)
+SUBDIRS(Apps/beauty_navigation/base_local_planner)
+SUBDIRS(Apps/beauty_navigation/carrot_planner)
+SUBDIRS(Apps/beauty_navigation/clear_costmap_recovery)
+SUBDIRS(Apps/beauty_navigation/dwa_local_planner)
+SUBDIRS(Apps/beauty_navigation/move_slow_and_clear)
+SUBDIRS(Apps/beauty_navigation/navfn)
+SUBDIRS(Apps/beauty_navigation/global_planner)
+SUBDIRS(Apps/beauty_navigation/rotate_recovery)
+SUBDIRS(Apps/beauty_navigation/move_base)
+SUBDIRS(Apps/beauty_2dnav)

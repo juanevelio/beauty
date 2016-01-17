@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------------
+Node [/arduino]
+Publications: 
+ * /arduino/sensor/onboard_led [ros_arduino_msgs/Digital]
+ * /rosout [rosgraph_msgs/Log]
+ * /tf [tf/tfMessage]
+ * /odom [nav_msgs/Odometry]
+ * /arduino/sensor_state [ros_arduino_msgs/SensorState]
+ * /cmd_vel [geometry_msgs/Twist]
+
+Subscriptions: 
+ * /cmd_vel [geometry_msgs/Twist]
+
+Services: 
+ * /arduino/digital_read
+ * /arduino/digital_write
+ * /arduino/analog_read
+ * /arduino/onboard_led/write
+ * /arduino/set_logger_level
+ * /arduino/digital_set_direction
+ * /arduino/servo_read
+ * /arduino/get_loggers
+ * /arduino/analog_write
+ * /arduino/servo_write
+
+
+contacting node http://remote:43737/ ...
+Pid: 10023
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /cmd_vel
+    * to: /arduino
+    * direction: outbound
+    * transport: TCPROS
+ * topic: /cmd_vel
+    * to: /arduino (http://remote:43737/)
+    * direction: inbound
+    * transport: TCPROS
+

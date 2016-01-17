@@ -1,0 +1,13 @@
+# created by Yu Jay
+# Configuration for subscribers to cmd_vel sources for keyop operateion
+# with safter reactive controller
+#
+subscribers:
+  - name:        "Safe reactive controller"
+    topic:       "input/safety_controller"
+    timeout:     0.2
+    priority:    10
+  - name:        "Teleoperation"
+    topic:       "input/teleop"
+    timeout:     10
+    priority:    7

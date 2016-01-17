@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/beauty/beauty_ws/src/Apps/beauty_teleop/src/beauty_joy.cpp
+ros/ros.h
+-
+geometry_msgs/Twist.h
+-
+sensor_msgs/Joy.h
+-
+boost/thread/mutex.hpp
+/home/beauty/beauty_ws/src/Apps/beauty_teleop/src/boost/thread/mutex.hpp
+boost/thread/thread.hpp
+/home/beauty/beauty_ws/src/Apps/beauty_teleop/src/boost/thread/thread.hpp
+ros/console.h
+/home/beauty/beauty_ws/src/Apps/beauty_teleop/src/ros/console.h
+

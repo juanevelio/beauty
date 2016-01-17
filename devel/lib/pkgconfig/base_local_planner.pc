@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/devel
+
+Name: base_local_planner
+Description: Description of base_local_planner
+Version: 1.12.7
+Cflags: -I/home/beauty/beauty_ws/devel/include -I/home/beauty/beauty_ws/src/Apps/beauty_navigation/base_local_planner/include
+Libs: -L/home/beauty/beauty_ws/devel/lib -lbase_local_planner -ltrajectory_planner_ros
+Requires: roscpp dynamic_reconfigure message_generation tf pluginlib costmap_2d nav_core angles

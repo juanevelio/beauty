@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "beauty_set_tf")
+set(beauty_set_tf_MAINTAINER "beauty <beauty@todo.todo>")
+set(beauty_set_tf_DEPRECATED "")
+set(beauty_set_tf_VERSION "0.0.0")
+set(beauty_set_tf_BUILD_DEPENDS "geometry_msgs" "roscpp" "tf" "sensor_msgs")
+set(beauty_set_tf_RUN_DEPENDS "sensor_msgs" "geometry_msgs" "roscpp" "tf")
+set(beauty_set_tf_BUILDTOOL_DEPENDS "catkin")

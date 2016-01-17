@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "beauty_2dnav")
+set(beauty_2dnav_MAINTAINER "beauty <beauty@todo.todo>")
+set(beauty_2dnav_DEPRECATED "")
+set(beauty_2dnav_VERSION "0.0.0")
+set(beauty_2dnav_BUILD_DEPENDS "arduino" "beauty_set_tf" "move_base" "razor_imu_9dof" "rplidar")
+set(beauty_2dnav_RUN_DEPENDS "arduino" "beauty_set_tf" "move_base" "razor_imu_9dof" "rplidar")
+set(beauty_2dnav_BUILDTOOL_DEPENDS "catkin")

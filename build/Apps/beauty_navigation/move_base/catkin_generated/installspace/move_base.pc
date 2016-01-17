@@ -1,0 +1,8 @@
+prefix=/home/beauty/beauty_ws/install
+
+Name: move_base
+Description: Description of move_base
+Version: 1.12.7
+Cflags: -I/home/beauty/beauty_ws/install/include
+Libs: -L/home/beauty/beauty_ws/install/lib 
+Requires: roscpp dynamic_reconfigure

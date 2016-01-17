@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "beauty_urdf")
+set(beauty_urdf_MAINTAINER "beauty <beauty@todo.todo>")
+set(beauty_urdf_DEPRECATED "")
+set(beauty_urdf_VERSION "0.0.0")
+set(beauty_urdf_BUILD_DEPENDS "roscpp" "rospy" "sensor_msgs" "std_msgs" "tf" "urdf")
+set(beauty_urdf_RUN_DEPENDS "roscpp" "rospy" "sensor_msgs" "std_msgs" "tf" "urdf")
+set(beauty_urdf_BUILDTOOL_DEPENDS "catkin")
